@@ -11,7 +11,26 @@ pub fn run() {
     fun2(name2);
     increment(&mut number);
     println!("{} {} {}", name, name2, number);
+
 }
+
+fn fun(name: &mut String) {
+    name.push_str(" is great");
+    println!("fun Function calling name {}", name);
+    *name = String::from("Samuel miranda");
+    println!("fun Function calling name {}", name);
+}
+
+fn fun2(name: &str) {
+    println!("fun2 Function calling name {}", name)
+}
+
+fn increment(num: &mut i16) {
+    *num += 1;
+
+    println!("Num-{} *Num-{}", num, *num)
+}
+
 
 fn scope() {
     // This binding lives in the main function
@@ -69,19 +88,3 @@ fn freezing() {
     _mutable_integer = 3;
 }
 
-fn fun(name: &mut String) {
-    name.push_str(" is great");
-    println!("fun Function calling name {}", name);
-    *name = String::from("Samuel miranda");
-    println!("fun Function calling name {}", name);
-}
-
-fn fun2(name: &str) {
-    println!("fun2 Function calling name {}", name)
-}
-
-fn increment(num: &mut i16) {
-    *num += 1;
-
-    println!("Num-{} *Num-{}", num, *num)
-}

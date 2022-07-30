@@ -18,8 +18,12 @@ fn main() {
     // fundamentals::run_modules();
     // fundamentals::run_generics();
     // fundamentals::run_associated_types();
-    fundamentals::run_scoping_rules();
-    // cfg();
+    // fundamentals::run_scoping_rules();
+    // fundamentals::run_lifetimes();
+    // fundamentals::run_traits();
+    fundamentals::run_iterators();
+
+    //  cfg();
 }
 
 // This function only gets compiled if the target OS is linux
@@ -43,4 +47,16 @@ fn cfg() {
     } else {
         println!("Yes. It's definitely *not* linux!");
     }
+}
+
+// struct Data<T>(T);
+
+enum List {
+    Node(i32, &'static List),
+    Null,
+}
+
+use List::{Node, Null};
+fn list() {
+    let list = Node(3, &Node(5, &Node(6, &Null)));
 }

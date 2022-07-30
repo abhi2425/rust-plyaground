@@ -2,6 +2,39 @@
 
 use std::fmt::*;
 
+pub fn run() {
+    println!("*****Format*****");
+    println!();
+
+    hello();
+    println!("// ---------------------------------------------------------------------------------------------- //");
+
+    numbers();
+    println!("// ---------------------------------------------------------------------------------------------- //");
+
+    point();
+    println!("// ---------------------------------------------------------------------------------------------- //");
+
+    list();
+    println!("// ---------------------------------------------------------------------------------------------- //");
+
+    color();
+
+    println!("{:05o}", 69);
+    println!("{:08X}", 10i32);
+    eprintln!("This is error");
+
+    let form = format!(
+        "This
+    is 
+    great
+    "
+    );
+    println!("{}", form)
+}
+
+/*---------------------------------------------------- */
+
 #[derive(Debug)] // Display can not be derived
 struct Hello {
     name: String,
@@ -144,30 +177,4 @@ fn color() {
     for color in colors.iter() {
         println!("{}", color);
     }
-}
-
-/*---------------------------------------------------- */
-
-pub fn run() {
-    println!("*****Format*****");
-    println!();
-
-    hello();
-    numbers();
-    point();
-    list();
-
-    color();
-
-    println!("{:05o}", 69);
-    println!("{:08X}", 10i32);
-    eprintln!("This is error");
-
-    let form = format!(
-        "This
-    is 
-    great
-    "
-    );
-    println!("{}", form)
 }

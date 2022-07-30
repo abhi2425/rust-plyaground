@@ -4,8 +4,13 @@
 
 pub fn run() {
     casting();
+    println!("// ---------------------------------------------------------------------------------------------- //");
+
     literals();
+    println!("// ---------------------------------------------------------------------------------------------- //");
 }
+
+// --------------------------------------------------------- //
 
 fn casting() {
     let decimal = 65.432f32;
@@ -81,6 +86,8 @@ fn casting() {
     }
 }
 
+// --------------------------------------------------------- //
+
 fn literals() {
     // Suffixed literals, their types are known at initialization
     let x = 1u8;
@@ -93,7 +100,7 @@ fn literals() {
     // UnSuffixed literals, their types depend on how they are used
     let i = 1;
     let f = 1.0;
-    let _f = 8999988888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888.67f64;
+    let _f = 8999988888888888888888888888888888888888.888888888888888888888867f64;
 
     // `size_of_val` returns the size of a variable in bytes
     println!("size of `x` in bytes: {}", std::mem::size_of_val(&x));

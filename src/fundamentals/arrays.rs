@@ -18,8 +18,8 @@ fn iter() {
     }
     println!(" can be printed {:?}", v);
 
-    for elem in v {
-        // consumes v, owned elem
+    for elem in v.into_iter() { //elem in v
+         // consumes v, owned elem
     }
 
     // println!(" can not be printed {:?}", v);
@@ -38,8 +38,13 @@ pub fn run() {
     );
 
     get_characters(&fruits);
+    println!("// ---------------------------------------------------------------------------------------------- //");
+
     fruit_juice(&mut fruits);
-    get_slice(&veggies[0..2])
+    println!("// ---------------------------------------------------------------------------------------------- //");
+
+    get_slice(&veggies[0..2]);
+    println!("// ---------------------------------------------------------------------------------------------- //");
 }
 
 fn fruit_juice(fruit: &mut [&str; 4]) {
